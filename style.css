@@ -1,0 +1,168 @@
+body
+{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+.container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1000px;
+    height: 500px;
+    display: flex;
+}
+
+.container .box
+{
+    position: relative;
+    height: 500px;
+    width: 250px;
+    background: #ccc;
+    transition: 0.5s;
+}
+
+.container .box .thumbs
+{
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.container .box .thumbs img
+{
+    width: 100%;
+}
+
+.container .box .detials
+{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.container .box:nth-child(odd) .thumbs
+{
+    bottom: 0;
+    left: 0;
+}
+
+.container .box:nth-child(even) .detials
+{
+    bottom: 0;
+    left: 0;
+}
+
+.container .box .detials .content
+{
+    position: absolute;
+    top: calc(50% - 16px);
+    transform: translateY(-50%);
+    padding: 20%;
+    text-align: center;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.container .box:hover .detials .content
+{
+    top:calc(50%);
+}
+
+.container .box:hover
+{
+    transform: scale(1.1);
+    z-index: 1;
+    box-shadow: 0xp 0px 0px 5px;
+}
+
+.container .box .detials .content a
+{
+    display: inline-block;
+}
+
+@media (max-width : 1000px)
+{
+    .container
+    {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .container .box
+    {
+        left: 0%;
+        top: 0%;
+        height: 250px;
+    }
+    .container .box .thumbs
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 760px)
+{
+    .container
+    {
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        box-sizing: border-box;
+        display:initial;
+    }
+    .container .box
+    {
+        left: 0%;
+        top: 0%;
+        height: 250px;
+        width: 50%;
+        float: left;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .container
+    {
+        width: 100%;
+        height: auto;
+        padding: 0px;
+        box-sizing: border-box;
+        display:initial;
+        top:75%;
+        left: 50%;
+    }
+    .container .box
+    {
+        left: 0%;
+        top: 0%;
+        height: 250px;
+        width: 100%;
+        float: none;
+    }
+}
+
+.container .box:nth-child(1)
+{
+    background-color: aqua;
+}
+
+.container .box:nth-child(2)
+{
+    background-color:blueviolet;
+}
+
+.container .box:nth-child(3)
+{
+    background-color: rgb(218, 56, 78);
+}
+
+.container .box:nth-child(4)
+{
+    background-color: rgb(198, 250, 10);
+}
